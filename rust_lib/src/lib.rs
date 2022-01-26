@@ -1,3 +1,13 @@
+#[no_mangle]
+pub extern "C" fn add_one_c(x: i32) -> i32 {
+    add_one(x)
+}
+
+#[no_mangle]
+pub extern "C" fn add_two_c(x: i32) -> i32 {
+    add_two(x)
+}
+
 fn add_one(x: i32) -> i32 {
     x + 1
 }

@@ -6,3 +6,4 @@ Then C/C++ project can use this.
 
 Have benchmark/performance in mind.
 
+https://github.com/alexcrichton/rust-ffi-examples
