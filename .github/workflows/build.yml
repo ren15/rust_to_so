@@ -17,7 +17,11 @@ jobs:
           rustc --version
           clang++ --version
 
-      - name: Compile and Run
+      - name: Compile and Run Example
         run: |
           cd cpp-to-rust
           make all
+
+      - name: Compile and Run My demo
+        run: |
+          make run

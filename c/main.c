@@ -2,9 +2,10 @@
 
 #include <stdio.h>
 
-int main() {
-  int32_t x = 1;
-  x = add_one_c(x);
-  printf("%d\n", x);
-  return 0;
+int main()
+{
+    int32_t x = 1;
+    printf("%d\n", add_one_c(x));
+    printf("%d\n", add_two_c(x));
+    return 0;
 }
