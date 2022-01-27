@@ -1,18 +1,14 @@
-ifeq ($(shell uname),Darwin)
-    EXT := dylib
-else
-    EXT := so
-endif
+.PHONY: $(MAKECMDGOALS)
 
 cbindgen:
 	cbindgen --output src/example.h
 
-all: target/debug/libdouble_input.$(EXT) cbindgen
-	g++ src/main.cpp -L ./target/debug/ -ldouble_input -o run
-	LD_LIBRARY_PATH=./target/debug/ ./run
+all: target/release/libdouble_input.so cbindgen
+	clang++ -std=c++20 src/main.cpp -L ./target/release/ -ldouble_input -o run
+	LD_LIBRARY_PATH=./target/release/ ./run
 
-target/debug/libdouble_input.$(EXT): src/lib.rs Cargo.toml
-	cargo build
+target/release/libdouble_input.so: src/lib.rs Cargo.toml
+	cargo build --release
 
 clean:
 	rm -rf target

@@ -1,0 +1,23 @@
+name: ci
+
+on: push
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  try_rust_to_so:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Sys Info
+        run: |
+          rustc --version
+          clang++ --version
+
+      - name: Compile and Run
+        run: |
+          cd cpp-to-rust
+          make all
