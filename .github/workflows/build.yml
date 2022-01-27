@@ -2,11 +2,8 @@ name: ci
 
 on: push
 
-env:
-  DEBIAN_FRONTEND: noninteractive
-
 jobs:
-  try_rust_to_so:
+  run:
     runs-on: ubuntu-20.04
 
     steps:

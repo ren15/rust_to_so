@@ -1,9 +1,16 @@
 # rust_to_so
 
-This repo is for creating `.so` file from rust.
-
+This repo is for creating `.so` and `.a` file from rust.
 Then C/C++ project can use this.
 
-Have benchmark/performance in mind.
+Tools used:
+```
+- cbindgen      ## .h header auto-generator
+- clang++       ## the compiler
+- make
+- bear          ## for generating compile_commands.json
+```
 
-https://github.com/alexcrichton/rust-ffi-examples
+More complicated examples will be in another repo, those will focus on performance/benchmark.
+
+Credit to https://github.com/alexcrichton/rust-ffi-examples
