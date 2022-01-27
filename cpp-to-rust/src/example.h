@@ -1,13 +1,11 @@
-#ifndef _EXAMPLE_H
-#define _EXAMPLE_H
+#include <cstdarg>
+#include <cstdint>
+#include <cstdlib>
+#include <ostream>
+#include <new>
 
-#ifdef __cplusplus
-extern "C"{
-#endif
+extern "C" {
 
-int double_input(int input);
+int32_t double_input(int32_t input);
 
-#ifdef __cplusplus
-}
-#endif
-#endif
+} // extern "C"

@@ -4,7 +4,10 @@ else
     EXT := so
 endif
 
-all: target/debug/libdouble_input.$(EXT)
+cbindgen:
+	cbindgen --output src/example.h
+
+all: target/debug/libdouble_input.$(EXT) cbindgen
 	g++ src/main.cpp -L ./target/debug/ -ldouble_input -o run
 	LD_LIBRARY_PATH=./target/debug/ ./run
 
